@@ -1,0 +1,83 @@
+<template>
+<main class="form-signin">
+  <form @submit.prevent="register">
+    <h1 class="h3 mb-3 fw-normal">Cadastro</h1>
+
+    <div class="form-floating">
+      <input v-model="form.name" type="text" class="form-control" id="name" placeholder="João da Silva" aria-describedby="nameHelp">
+      <label for="name">Nome</label>
+      <div id="nameHelp" class="form-text" v-if="form.errors.name">{{ form.errors.name }}</div>
+    </div>
+
+    <div class="form-floating">
+      <input v-model="form.email" type="email" class="form-control" id="email" placeholder="nome@exemplo.com" aria-describedby="emailHelp" required>
+      <label for="email">E-mail</label>
+      <div id="emailHelp" class="form-text" v-if="form.errors.email">{{ form.errors.email }}</div>
+    </div>
+
+    <div class="form-floating">
+      <input v-model="form.password" type="password" class="form-control" id="password" placeholder="Senha" aria-describedby="passwordHelp" required>
+      <label for="floatingPassword">Senha</label>
+      <div id="passwordHelp" class="form-text" v-if="form.errors.password">{{ form.errors.password }}</div>
+    </div>
+
+    <div class="form-floating">
+      <input v-model="form.password_confirmation" type="password" class="form-control" id="password_confirmation" placeholder="Confirmação de senha" aria-describedby="passwordConfirmationHelp" required>
+      <label for="password_confirmation">Confirmação de Senha</label>
+      <div id="passwordConfirmationHelp" class="form-text" v-if="form.errors.email">{{ form.errors.email }}</div>
+    </div>
+
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Cadastrar</button>
+  </form>
+</main>
+</template>
+<style scoped>
+@import url('../../../css/signin.css');
+
+body {
+    text-align: center !important;
+}
+</style>
+<script>
+    export default {
+        data() {
+            return {
+                form: this.$inertia.form({
+                    name: '',
+                    email: '',
+                    password: '',
+                    password_confirmation: ''
+                }),
+                show1: false,
+                show2: false,
+                nameRules: [
+                    v => !!v || 'Name is required',
+                    v => (v && v.length <= 50) || 'Name must be less than 50 characters',
+                ],
+                emailRules: [
+                    v => !!v || 'E-mail is required',
+                    v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+                ],
+                passwordRules: [
+                    v => !!v || 'Password is required',
+                    v => (v && v.length >= 6) || 'Password must be greater than 6 characters',
+                ],
+            }
+        },
+        computed: {
+            passwordConfirmationRule() {
+                return [
+                    this.form.password === this.form.password_confirmation || "Password must match",
+                    v => !!v || 'You must confirm your password.'
+                ]
+            }
+        },
+        methods: {
+            register() {
+                this.form.post(this.route('register'), {
+                    onFinish: () => this.form.reset('password', 'password_confirmation')
+                })
+            }
+        }
+    }
+</script>
