@@ -1,13 +1,10 @@
 <template>
-  <div>
-      <Carousel />
-      <div class="container">
-        <h1 class="mt-5">Index Page</h1>
-        <p class="lead">
-          Index
-        </p>
-      </div>
-  </div>
+  <Carousel />
+  <main class="flex-shrink-0">
+    <div class="container">
+      <h1 class="mt-3">Página Inicial</h1>
+    </div>
+  </main>
 </template>
 
 <script>

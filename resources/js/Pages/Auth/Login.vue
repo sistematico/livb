@@ -1,6 +1,5 @@
 <template>
-<main class="form-signin">
-  <form @submit.prevent="login">
+  <form @submit.prevent="login" class="form-signin my-auto">
     <h1 class="h3 mb-3 fw-normal">Entrar</h1>
 
     <div class="form-floating">
@@ -22,7 +21,6 @@
     </div>
     <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
   </form>
-</main>
 </template>
 <style scoped>
 @import url('../../../css/signin.css');

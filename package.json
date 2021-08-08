@@ -25,6 +25,8 @@
         "@inertiajs/inertia-vue3": "^0.5.2",
         "@popperjs/core": "^2.9.3",
         "bootstrap": "^5.1.0",
-        "vue": "^3.1.5"
+        "plyr": "^3.6.8",
+        "vue": "^3.1.5",
+        "vue-plyr": "^7"
     }
 }

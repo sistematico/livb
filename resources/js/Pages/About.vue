@@ -1,10 +1,12 @@
 <template>
-  <div>
-      <h1 class="mt-5">{{ appName }}</h1>
-      <p class="lead">
-        About Page
-      </p>
-  </div>
+  <main class="flex-shrink-0">
+    <div class="container">
+        <h1 class="mt-5">{{ appName }}</h1>
+        <p class="lead">
+          About
+        </p>
+    </div>
+  </main>
 </template>
 <script>
 import { computed } from 'vue'

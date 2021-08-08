@@ -6,6 +6,9 @@ import { createInertiaApp } from '@inertiajs/inertia-vue3'
 import { ZiggyVue } from 'ziggy';
 import { Ziggy } from './ziggy';
 
+import VuePlyr from 'vue-plyr'
+import '../css/plyr.css'
+
 // Twitter Bootstrap
 import 'bootstrap'
 
@@ -21,6 +24,7 @@ createInertiaApp({
     createApp({ render: () => h(app, props) })
       .mixin({ methods: { route } })
       .use(plugin, ZiggyVue, Ziggy)
+      .use(VuePlyr, { plyr: {} })
       .mount(el)
   },
 })

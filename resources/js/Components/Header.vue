@@ -27,6 +27,7 @@
             </li>
           </ul>
 
+          <Player class="ms-auto nav-item" />
 
           <div class="ms-auto" v-if="$page.props.user">
 
@@ -63,9 +64,10 @@
 </template>
 <script>
 import { Link } from '@inertiajs/inertia-vue3'
+import Player from '@/Components/Player'
 
 export default {
-  components: { Link },
+  components: { Link, Player },
   props: { appname: String, default: '' },
   methods: {
     logout() {

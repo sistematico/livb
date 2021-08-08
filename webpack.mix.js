@@ -3,6 +3,7 @@ const path = require('path');
 
 mix.js('resources/js/app.js', 'public/js')
    .vue({ version: 3 })
+   .copy('resources/img/favicon.ico', 'public/img')
    .sass('resources/scss/app.scss', 'public/css')
    .webpackConfig((webpack) => {
       return {

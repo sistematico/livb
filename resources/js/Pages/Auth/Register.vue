@@ -1,6 +1,5 @@
 <template>
-<main class="form-signin">
-  <form @submit.prevent="register">
+  <form @submit.prevent="register" class="form-signin my-auto">
     <h1 class="h3 mb-3 fw-normal">Cadastro</h1>
 
     <div class="form-floating">
@@ -24,12 +23,11 @@
     <div class="form-floating">
       <input v-model="form.password_confirmation" type="password" class="form-control" id="password_confirmation" placeholder="Confirmação de senha" aria-describedby="passwordConfirmationHelp" required>
       <label for="password_confirmation">Confirmação de Senha</label>
-      <div id="passwordConfirmationHelp" class="form-text" v-if="form.errors.email">{{ form.errors.email }}</div>
+      <div id="passwordConfirmationHelp" class="form-text" v-if="form.errors.password_confirmation">{{ form.errors.password_confirmation }}</div>
     </div>
 
     <button class="w-100 btn btn-lg btn-primary" type="submit">Cadastrar</button>
   </form>
-</main>
 </template>
 <style scoped>
 @import url('../../../css/signin.css');
