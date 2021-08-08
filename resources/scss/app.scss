@@ -2,12 +2,9 @@
 
 html, body {
   height: 100%;
-  margin: 0;
-  padding: 0;
 }
 
 body {
-  font-family: 'Nunito', sans-serif;
   padding-top: 3.5rem;
   padding-bottom: 0 !important;
 }
@@ -16,8 +13,8 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  margin: 0;
-  padding: 0;
 }
+
+$font-family: 'Nunito', sans-serif;
 
 @import '~bootstrap/scss/bootstrap';

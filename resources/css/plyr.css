@@ -307,7 +307,8 @@ button.plyr__control.faux-link:before {
 .plyr__controls {
     align-items: center;
     display: flex;
-    justify-content: flex-end;
+    /* justify-content: flex-end; */
+    justify-content: center;
     text-align: center;
 }
 .plyr__controls .plyr__progress__container {
